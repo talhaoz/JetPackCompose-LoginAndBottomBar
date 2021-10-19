@@ -2,4 +2,5 @@
 Login Screen and bottom bar navigation with MVVM
 
 - Kotlin
-- Koin DI, Flow, LiveData
+- Koin DI
+- Flow, LiveData
