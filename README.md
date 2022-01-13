@@ -1,4 +1,4 @@
-# JetPackCompose_LoginAndBottomBar
+# JetPackCompose Navigate from Login to BottomBar
 Login Screen and bottom bar navigation with MVVM
 
 - Kotlin
