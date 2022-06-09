@@ -52,7 +52,11 @@ fun LoginApplication(userViewModel: UserViewModel) {
             content = { RegisterScreen(navController = navController) })
         composable(
             route = Screen.AppScaffold.route,
-            content = { AppScaffold(navController = navBarNavController) })
+            content = {
+                AppScaffold(navController = navBarNavController) {
+                    navController.navigate(Screen.LoginScreen.route)
+                }
+            })
 
     }
 }

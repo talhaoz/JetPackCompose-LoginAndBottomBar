@@ -10,14 +10,20 @@ import com.talhaoz.loginbottombarapp.ui.bottombar.ProfileScreen
 import com.talhaoz.loginbottombarapp.ui.bottombar.SettingsScreen
 
 @Composable
-fun NavigationHost(navController: NavController) {
+fun NavigationHost(
+    navController: NavController,
+    logout: () -> Unit
+) {
     NavHost(
-
         navController = navController as NavHostController,
         startDestination = NavigationScreen.HomeScreen.route
     ) {
         composable(NavigationScreen.HomeScreen.route) { HomeScreen() }
         composable(NavigationScreen.ProfileScreen.route) { ProfileScreen() }
-        composable(NavigationScreen.SettingsScreen.route) { SettingsScreen() }
+        composable(NavigationScreen.SettingsScreen.route) {
+            SettingsScreen() {
+                logout()
+            }
+        }
     }
 }
