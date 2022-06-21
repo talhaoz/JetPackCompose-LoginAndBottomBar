@@ -7,11 +7,13 @@ import androidx.navigation.NavController
 import com.talhaoz.loginbottombarapp.navigation.NavigationHost
 
 @Composable
-fun AppScaffold(navController: NavController) {
+fun AppScaffold(
+    navController: NavController,
+    logout: () -> Unit
+) {
     val scaffoldState = rememberScaffoldState()
 
     Scaffold(
-
         bottomBar = {
             BottomBar(navController = navController)
         },
@@ -19,7 +21,9 @@ fun AppScaffold(navController: NavController) {
 
         ) {
 
-        NavigationHost(navController = navController)
+        NavigationHost(navController = navController) {
+            logout()
+        }
     }
 
 }
